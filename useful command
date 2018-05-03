@@ -1,0 +1,47 @@
+$ rosrun usb_cam usb_cam_node _video_device:=/dev/video1 _pixel_format:=yuyv _camera_name:=tracker_camera
+
+
+
+
+ $ source ~/tensorflow/bin/activate      # bash, sh, ksh, or zsh
+$ source ~/tensorflow/bin/activate.csh  # csh or tcsh
+
+方法一、如果你知道要删除软件的具体名称，可以使用
+
+sudo apt-get remove --purge 软件名称  
+sudo apt-get autoremove --purge 软件名称 
+
+    1
+    2
+
+方法二、如果不知道要删除软件的具体名称，可以使用
+
+dpkg --get-selections | grep ‘软件相关名称’
+
+sudo apt-get purge 一个带core的package，如果没有带core的package，则是情况而定。
+
+    1
+    2
+    3
+
+2、清理残留数据
+
+dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P 
+
+
+run文件，具体安装方法是
+
+假如文件在桌面
+
+1.cd ~/desktop
+
+2.chmod +x XXX.run
+
+3.sudo ./XXX.run
+
+
+
+
+ 三、解压tar.gz文件：由于tar.gz文件是压缩文件，因此我们需要执行下面的命令进行解压缩：$ tar -zxvf aliedit.tar.gz；
+
+四：安装文件：例如，对上述文件解压后，我们可以执行下述命令安装:$ ./aliedit.sh；
